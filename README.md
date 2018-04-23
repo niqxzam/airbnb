@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -22,3 +23,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+=======
+# airbnb
+Airbnb clone app called 'Pairbnb'
+>>>>>>> 11bcb3b08296b45f9ef1dba8d0ee706f40a7af81
