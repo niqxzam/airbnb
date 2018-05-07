@@ -8,10 +8,9 @@
 
 user = {}
 user['password'] = 'asdf'
-user['password_confirmation'] = 'asdf'
 
 ActiveRecord::Base.transaction do
-  20.times do 
+  30.times do 
     user['first_name'] = Faker::Name.first_name 
     user['last_name'] = Faker::Name.last_name
     user['email'] = Faker::Internet.email

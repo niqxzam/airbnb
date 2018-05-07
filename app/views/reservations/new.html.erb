@@ -1,0 +1,7 @@
+<h1>New Reservation</h1>
+
+<%= render 'form', reservation: @reservation %>
+
+<%= link_to "Make Payment", braintree_new_path %> |
+
+<%= link_to 'Back', listing_reservations_path %>

@@ -1,5 +1,10 @@
 <%= link_to "Sign in with Google", "/auth/google_oauth2" %>
 
+<div class="avatar-field">
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar %>
+</div>
+
 <div class="first_name-field">
     <%= form.label :first_name %>
     <%= form.text_field :first_name %>
@@ -8,6 +13,26 @@
 <div class="last_name-field">
     <%= form.label :last_name %>
     <%= form.text_field :last_name %>
+</div>
+
+<div class="gender-field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender %>
+</div>
+
+<div class="phone-field">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+</div>
+
+<div class="country-field">
+    <%= form.label :country %>
+    <%= form.text_field :country %>
+</div>
+
+<div class="date-field">
+    <%= form.label :birthdate %>
+    <%= form.date_field :birthdate %>
 </div>
 
 <div class="text-field">

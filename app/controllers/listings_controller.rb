@@ -4,7 +4,7 @@ class ListingsController < ApplicationController
   # GET /listings
   # GET /listings.json
   def index
-    @listings = Listing.all
+    @listings = Listing.all.order(:home_name).paginate(:page => params[:page], :per_page => 6)
   end
 
   # GET /listings/1
@@ -15,10 +15,13 @@ class ListingsController < ApplicationController
   # GET /listings/new
   def new
     @listing = Listing.new
+
+    allowed?(action: flash, user: current_user)
   end
 
   # GET /listings/1/edit
   def edit
+    allowed?(action: flash, user: current_user)
   end
 
   # POST /listings
@@ -54,10 +57,14 @@ class ListingsController < ApplicationController
   # DELETE /listings/1
   # DELETE /listings/1.json
   def destroy
-    @listing.destroy
     respond_to do |format|
-      format.html { redirect_to listings_url, notice: 'Listing was successfully destroyed.' }
-      format.json { head :no_content }
+      if @listing.delete
+        format.html { redirect_to @listing, notice: 'Listing was successfully destroyed.' }
+        format.json { render :show, status: :ok, location: @listing }
+      else
+        format.html { render :delete }
+        format.json { render json: @listing.errors, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -69,6 +76,6 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:home_name, :description, :price, :tags)
+      params.require(:listing).permit({images: []}, :home_name, :description, :price, :place_type, :property_type, :country, :city, :state, :address, :zipcode, :room_number, :guest_number, :bed_number)
     end
 end

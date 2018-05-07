@@ -11,14 +11,60 @@
 </p>
 
 <p>
+  <strong>Place type:</strong>
+  <%= @listing.place_type %>
+</p>
+
+<p>
+  <strong>Property type:</strong>
+  <%= @listing.property_type %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @listing.country %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @listing.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @listing.state %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @listing.address %>
+</p>
+
+<p>
+  <strong>Zipcode:</strong>
+  <%= @listing.zipcode %>
+</p>
+
+<p>
   <strong>Price:</strong>
   <%= @listing.price %>
 </p>
 
 <p>
-  <strong>Tags:</strong>
-  <%= @listing.tags %>
+  <strong>Guest number:</strong>
+  <%= @listing.guest_number %>
 </p>
 
+<p>
+  <strong>Room number:</strong>
+  <%= @listing.room_number %>
+</p>
+
+<p>
+  <strong>Bed number:</strong>
+  <%= @listing.bed_number %>
+</p>
+
+<%= link_to 'Book Now', listing_reservations_path(@listing) %> |
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>

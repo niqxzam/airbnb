@@ -61,3 +61,25 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 
 gem 'faker'
+
+gem 'kaminari'
+
+gem 'acts-as-taggable-on', '~> 4.0'
+
+gem 'bootstrap-sass', '~> 3.2.0'
+
+gem 'autoprefixer-rails'
+
+gem 'carrierwave', '~> 1.0'
+
+gem "mini_magick"
+
+gem "will_paginate", '~> 3.1.0'
+
+gem "fog-aws"
+
+gem "braintree"
+
+gem "letter_opener", :group => :development
+
+gem "sidekiq"
